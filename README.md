@@ -6,12 +6,21 @@ A analyzer app of WhatsApp for smartphones with Symbian OS developed using Qt an
 
 Analyze logs files to display and export the data of the communications in lists, reports and statistics.
 
+
+Screenshots
+-----------
+
+![Alt text](https://raw.githubusercontent.com/jh2odo/wa-analyzer/master/screens/screen.png)
+
+
 Downloads Files
 ---------------
 
 You need to uninstall the Nokia Store version manually because this are a self-signed version and will not replace the Nokia Store version. 
 
-Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System: https://github.com/jh2odo/wa-analyzer/releases
+Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System: 
+
+https://github.com/jh2odo/wa-analyzer/releases
 
 - WAAnalyzer_unsigned_anna_v2_2_0.sis
 - WAAnalyzer_unsigned_s60_5_v2_2_0.sis
@@ -53,7 +62,7 @@ Technologies
 Description Internal
 --------------------
 
-- Gui screen orientation lock portrait with resolution 640 × 360 pixels
+- Gui screen orientation lock portrait with resolution 640 ï¿½ 360 pixels
 - The application gets data from text files and gz.
 - Uses reading mode phone contacts.
 - Processes and combines the data to display a report about the datails of messages in a list.
