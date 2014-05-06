@@ -1,0 +1,15 @@
+TODO
+
++ Version: 2.3.0 Developing (no stable)
+    - Add more features: Notification last connections
+    - Add url web and local of images, audios and videos
+    - Export contact to text file or send to email
+    - Improved statistics module
+    - Add more Export tool (messages, report and statistics)
+    - Chat grouping consecutive messages
+    - Add details notifications
+
++ Version X.X.X Future
+    - Develop for Quick Component QML
+    - Develop for other platforms
+
