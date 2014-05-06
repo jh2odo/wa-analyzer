@@ -11,7 +11,7 @@ Downloads Files
 
 You need to uninstall the Nokia Store version manually because this are a self-signed version and will not replace the Nokia Store version. 
 
-Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System: https://github.com/jh2odo/wa-analyzer/sis/
+Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System: https://github.com/jh2odo/wa-analyzer/releases
 
 - WAAnalyzer_unsigned_anna_v2_2_0.sis
 - WAAnalyzer_unsigned_s60_5_v2_2_0.sis
