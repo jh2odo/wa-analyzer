@@ -42,7 +42,7 @@ ICON = WAAnalyzer.svg
 symbian: {
 
     DEPLOYMENT.display_name = WAAnalyzer
-    VERSION = 2.2.0
+    VERSION = 2.2.1
 
 # 0xE277CC23 - Development
      TARGET.UID3 = 0xE277CC23
@@ -58,7 +58,7 @@ symbian: {
 
 
     #set UID, app name and version for sis
-    packageheader = "$${LITERAL_HASH}{\"WAAnalyzer\"}, (0xE277CC23), 2, 2, 0, TYPE=SA"
+    packageheader = "$${LITERAL_HASH}{\"WAAnalyzer\"}, (0xE277CC23), 2, 2, 1, TYPE=SA"
 
     my_deployment.pkg_prerules += packageheader vendorinfo
 

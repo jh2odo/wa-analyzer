@@ -33,7 +33,7 @@ Message::Message()
 }
 
 bool Message::isGroup(){
-    if(group.getId().isEmpty()) {
+    if(group.getContact().getNumber().isEmpty()) {
         return false;
     }
     return true;

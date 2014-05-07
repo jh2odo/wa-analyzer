@@ -10,8 +10,9 @@ Analyze logs files to display and export the data of the communications in lists
 Screenshots
 -----------
 
-![Alt text](https://raw.githubusercontent.com/jh2odo/wa-analyzer/master/screens/screen.png)
+![Alt text](https://raw.githubusercontent.com/jh2odo/wa-analyzer/master/screenshots/en/01.png) 
 
+More images: https://github.com/jh2odo/wa-analyzer/tree/master/screenshots
 
 Downloads Files
 ---------------
@@ -22,28 +23,28 @@ Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) O
 
 https://github.com/jh2odo/wa-analyzer/releases
 
-- WAAnalyzer_unsigned_anna_v2_2_0.sis
-- WAAnalyzer_unsigned_s60_5_v2_2_0.sis
-
 Features
 --------
 
 - Parser logs (debug) files of WhatsApp App to get data of the comunications and to analyze them
 - Limit notifications 7 days
 - Limit stats 30 days
-- Show notifications messages received and sent with the details:
+- Show notifications messages received and sent with the details [no content]:
   + From/To: the contact the message.
   + Type: text, image, audio, video, contact and location
   + Source: private or group (contact creator)
   + Length: length of message
-- Support contacts from phone native
 - Module statistics
   + Charts: Pie, Histogramm and Graphic
+- Tools: Capture screen and export contacts phone to txt
+- Set control/limit/filter messages, stats and setting
+- Auto detected directory WALogs, directory Images and language
+- Support contacts from phone native
 - Languages: English and Spanish, native; Portuguese, French, German, Italian and Russian, Google Translate
 - Phones (tested): Nokia N8, Nokia C7 and Nokia 5800 XpressMusic
 - Network access: No required
-- Compatible with WhatsApp 2.8.x and 2.9.x (last)
-- Recommended: WhatsApp 2.8.22
+- Compatible with WhatsApp 2.8.x, 2.9.x and 2.11.x(last)
+- Recommended: WhatsApp 2.9.x (last)
 - Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System
 
 Technologies
@@ -59,19 +60,32 @@ Technologies
 - NightCharts : https://code.google.com/p/shopping-lists-organizer/
 - Network access is not necessary to use the app
 
-Description Internal
+Internal Description
 --------------------
 
-- Gui screen orientation lock portrait with resolution 640 � 360 pixels
+- Gui screen orientation lock portrait with resolution 640 x 360 pixels
 - The application gets data from text files and gz.
 - Uses reading mode phone contacts.
 - Processes and combines the data to display a report about the datails of messages in a list.
 - Serialize and store logs processed in directory dat (performance,less system resources)
-- Compatible with WhatsApp 2.8.x and 2.9.x (last)
-- Recommended WhatsApp 2.8.22
 
-License
--------
+TODO
+----
+
++ Version: 2.3.0 Developing (no stable)
+    - Add more features: Notification last connections, Contact and Location messages types
+    - Export contact to text file or send to email
+    - Improved statistics module
+    - Add more Export tool (messages, report and statistics)
+
++ Version X.X.X Future
+    - Add url web and local of images, audios and videos
+	- Chat grouping consecutive messages
+    - Add details notifications
+    - Develop for other platforms
+
+Licenses
+--------
 
 WA Analyzer license:
 

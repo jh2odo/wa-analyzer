@@ -1,4 +1,10 @@
 CHANGELOG
++ Version: 2.2.1 07/05/2014 (stable)
+    - Add Logger - full support for WhatsApp 2.11.x (last version)
+	- Info text messages sent not show
+	- Info contact and location types not show
+	- Fixed several bugs with groups messages
+	
 + Version: 2.2.0 06/05/2014 (stable)
 	- Adapted to publish on github MIT licensed
 	- Generated self-signed files

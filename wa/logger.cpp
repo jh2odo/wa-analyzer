@@ -647,6 +647,7 @@ Line Logger::processWALine(QString line){
     //qDebug() << "processWALine" << line;
 
     // SEND: All version
+    // Last version: 2.11.476 - Send Text Not Found
 
     if( line.contains("/send-text-message:") ||
         line.contains("/send-message:") ||
@@ -722,9 +723,18 @@ Line Logger::processWALine(QString line){
             if(!isGroup){
                 // Private
                 if(text.contains("-contact") || text.contains("-location")){
-                     if(toStart != -1){
+                    // 2.11.476
+                    if(int numberEnd = text.indexOf("@",toStart+3)){
+                        if(numberEnd != -1){
+                             listText.insert("contact",text.mid((toStart+3), (numberEnd - (toStart+3))));
+                        }
+                        if(listText.value("contact").contains("undefined")){
+                         //   qDebug() << "aaaaaaaaaaaaaaaaaaa: " << text << ":::" << line;
+                        }
+                    // General
+                    }else if(toStart != -1){
                          listText.insert("contact",text.mid((toStart+3), (text.length() - (toStart + 3))));
-                     }
+                    }
                 }else{
                     if(int numberEnd = text.indexOf(",",toStart+3)){
                         if(numberEnd != -1){
@@ -772,11 +782,16 @@ Line Logger::processWALine(QString line){
 
     // RECV: All Version
 
-    // Private: from=34627358016
-    // Group: from=34627358016-1359045108
-    // Group: from=34627358016-1359041893/34677863637
+    // 2.8.22 and 2.9.3
+    // Private: from=34123456789
+    // Group: from=34123456789-1359045108
+    // Group: from=34123456789-1359041893/34987654321
 
-    // 2.9.3
+    // 2.11.476
+    // Private: 34123456789/#1399384667-71 :: autor / id
+    // Group: 34987654321-1370984954/34123456789#1399397482-147  ::  grupo-id / autor-id (Volvemos a saber quien lo manda)
+
+    // 2.9.3 and 2.11.476
     // [, sizes=]
     // - x/0/0 Text or Contact ¿?
     // - 0/0/x Audio ¿?
@@ -825,9 +840,10 @@ Line Logger::processWALine(QString line){
                          }
                     }
                 }
-            }else if(text.contains(", sizes=")){
-                if(int start = text.indexOf(", sizes=")){
-                     QString sizes = text.mid(start+8, text.length() - (start + 8));
+            // Eliminate [,] y set length 7
+            }else if(text.contains(" sizes=")){
+                if(int start = text.indexOf(" sizes=")){
+                     QString sizes = text.mid(start+7, text.length() - (start + 7));
                      QStringList sizesTmp = sizes.split("/");
                      if(sizesTmp.size() == 3){
                          if(!sizesTmp.at(0).contains("0") && sizesTmp.at(1).contains("0") && sizesTmp.at(2).contains("0")){
@@ -859,9 +875,20 @@ Line Logger::processWALine(QString line){
                           listText.insert("id",text.mid((start + 5),(end - (start + 5))));
                      }
                 }
+            }else if(int start = text.indexOf("#")){
+                if(int end = text.indexOf(" ", start + 1)){
+                     if(end != -1){
+                          listText.insert("id",text.mid((start + 1),(end - (start + 1))));
+                     }
+                }
             }
 
-            if(int start = text.indexOf(": from=")){
+            qDebug() << text << endl;
+
+            // 2.9.3
+            if(text.contains(": from=")){
+                qDebug() << "si 9" << endl;
+                int start = text.indexOf(": from=");
                 if(int end = text.indexOf(",", start + 7)){
                      if(end != -1){
                          QString from = text.mid((start + 7),(end - (start + 7)));
@@ -897,12 +924,66 @@ Line Logger::processWALine(QString line){
 
                      }
                 }
+            // 2.11.476
+            }else if(text.contains("e: ")){
+                qDebug() << "si 11 ";
+                 int start = text.indexOf("e: ");
+                if(int end = text.indexOf(" ", start + 3)){
+                     if(end != -1){
+
+                         QString from = text.mid((start + 3),(end - (start + 3)));
+                         qDebug() << from;
+
+                         bool isGroup = false;
+                         int numberGroup = from.indexOf("-");
+                         if((numberGroup != -1) && (numberGroup <= 15)){ // Solo puede ser el primer -
+                            isGroup = true;
+                            listText.insert("source","group");
+                         }else{
+                            isGroup = false;
+                            listText.insert("source","private");
+                         }
+
+                         qDebug() << " " << listText.value("source") << endl;
+
+                         if(!isGroup){
+                             // Private
+                             QStringList contactTextList = from.split("/");
+
+                           //  qDebug() << "Private 0: " << contactTextList.at(0) << endl;
+                           //  qDebug() << "Private 1: " << contactTextList.at(1) << endl;
+                             listText.insert("contact",contactTextList.at(0));
+
+                         }else{
+                             // Group
+
+                             QStringList groupTextList = from.split("-");
+
+                             listText.insert("group",groupTextList.at(0));
+
+                             if(groupTextList.at(1).indexOf("/") != -1){
+                                groupTextList = groupTextList.at(1).split("/");
+                                if(groupTextList.at(1).indexOf("#") != -1){
+                                    groupTextList = groupTextList.at(1).split("#");
+                                    listText.insert("contact",groupTextList.at(0)); // Contact
+                                }else{
+                                    listText.insert("contact","unknown");
+                                }
+                             }else{
+                                 listText.insert("contact","unknown");
+                             }
+                         }
+
+
+                     }
+                }
             }
 
             Line lin = Line(time,type,listText);
             return lin;
 
         }else{
+            qDebug() << "si No valido" << endl;
             return Line(); // No valido
         }
     // Fin
