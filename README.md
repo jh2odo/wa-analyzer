@@ -6,7 +6,7 @@ A analyzer app of WhatsApp for smartphones with Symbian OS developed using Qt an
 
 Analyze logs files to display and export the data of the communications in lists, reports and statistics.
 
-This project are not associated in any way with Nokia Corporation, Symbian Software Ltd or WhatsApp Inc.
+This project is not associated in any way with Nokia Corporation, Symbian Software Ltd or WhatsApp Inc.
 
 
 Screenshots
@@ -185,7 +185,9 @@ Modified version of NightCharts library (util/charts.h):
 	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 	Please contact gordos.kund@gmail.com with any questions on this license.
 	
-	
-Nokia is a registered trademark of Nokia Corporation. 
-Symbian is a trademark of Symbian Software Ltd
-Whatsapp is a trademark of WhatsApp, Inc
+
+Trademarks
+
+	Nokia is a registered trademark of Nokia Corporation. 
+	Symbian is a trademark of Symbian Software Ltd
+	Whatsapp is a trademark of WhatsApp, Inc
