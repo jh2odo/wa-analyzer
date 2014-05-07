@@ -6,6 +6,8 @@ A analyzer app of WhatsApp for smartphones with Symbian OS developed using Qt an
 
 Analyze logs files to display and export the data of the communications in lists, reports and statistics.
 
+This project are not associated in any way with Nokia Corporation, Symbian Software Ltd or WhatsApp Inc.
+
 
 Screenshots
 -----------
@@ -44,7 +46,7 @@ Features
 - Phones (tested): Nokia N8, Nokia C7 and Nokia 5800 XpressMusic
 - Network access: No required
 - Compatible with WhatsApp 2.8.x, 2.9.x and 2.11.x(last)
-- Recommended: WhatsApp 2.9.x (last)
+- Recommended: WhatsApp 2.11.x (last)
 - Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System
 
 Technologies
@@ -184,3 +186,6 @@ Modified version of NightCharts library (util/charts.h):
 	Please contact gordos.kund@gmail.com with any questions on this license.
 	
 	
+Nokia is a registered trademark of Nokia Corporation. 
+Symbian is a trademark of Symbian Software Ltd
+Whatsapp is a trademark of WhatsApp, Inc
