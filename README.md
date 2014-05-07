@@ -69,6 +69,11 @@ Internal Description
 - Processes and combines the data to display a report about the datails of messages in a list.
 - Serialize and store logs processed in directory dat (performance,less system resources)
 
+CHANGELOG
+---------
+
+https://github.com/jh2odo/wa-analyzer/blob/master/CHANGELOG.md
+
 TODO
 ----
 
