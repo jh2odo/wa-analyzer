@@ -24,6 +24,7 @@ You need to uninstall the Nokia Store version manually because this are a self-s
 Latest stable release for Symbian^1(5th edition) and Symbian^3(Anna and Belle) Operating System: 
 
 Download GitHub: https://github.com/jh2odo/wa-analyzer/releases
+
 Download AppList: http://applist.schumi1331.de/content/125
 
 
